@@ -5,7 +5,7 @@
 # makeVector creates a list of functions for use by cachemean
 makeVector <- function()
     
-    x <-- list(
+    xLib <-- list(
         set <- function(y) {
             x <<- y
             m <<- NULL
@@ -21,12 +21,12 @@ makeVector <- function()
     
         )
 
-cachemean <- function(x, ...) {
+cachemean <- function(y, ...) {
     # cachemean: If available, use saved (cached) result, "m".
     
     # Attempt to retrieve saved result "m" 
     # without reading passed data and performing computation.
-    m <- x$getmean()
+    m <- xLib$getmean()
     
     
     # If m is FOUND (m is NOT NULL); RETURN SAVED (cached) "m" and EXIT.
@@ -37,14 +37,14 @@ cachemean <- function(x, ...) {
     
     # If the program has reached this point
     # m was NOT FOUND; get the passed data.
-    data <- x$get()
+    data <- xLib$get()
     
     # Compute the mean using the passed data.
     m <- mean(data, ...)
     
     # Use function setmean() to persist "m" 
     # (so it doesn't have to be calculated next call of cachemean)
-    x$setmean(m)
+    xLib$setmean(m)
     
     # Print m
     m

@@ -3,7 +3,7 @@
 #       cachemean.R (example from class assignment: "Programming Assignment 2")
 
 # makeVector creates a list of functions for use by cachemean
-makeVector <- function()
+makeVector <- function()  {
     
     xLib <-- list(
         set <- function(y) {
@@ -20,9 +20,14 @@ makeVector <- function()
         getmean <- function() m 
     
         )
+}
 
 cachemean <- function(y,  ...) {
     # cachemean: If available, use saved (cached) result, "m".
+    if(!is.null(xLib)) {
+        message("making function library")
+        makeVector(y)
+    }
     
     # Attempt to retrieve saved result "m" 
     # without reading passed data and performing computation.

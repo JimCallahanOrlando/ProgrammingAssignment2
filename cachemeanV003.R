@@ -24,9 +24,9 @@ makeVector <- function()  {
 
 cachemean <- function(y,  ...) {
     # cachemean: If available, use saved (cached) result, "m".
-    if(!is.null(xLib)) {
+    if( !exists("xLib", mode = "list") ) {
         message("making function library")
-        makeVector(y)
+        makeVector()
     }
     
     # Attempt to retrieve saved result "m" 

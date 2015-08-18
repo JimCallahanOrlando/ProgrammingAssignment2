@@ -21,7 +21,7 @@ makeVector <- function()
     
         )
 
-cachemean <- function(y, xLib = xLib, ...) {
+cachemean <- function(y,  ...) {
     # cachemean: If available, use saved (cached) result, "m".
     
     # Attempt to retrieve saved result "m" 

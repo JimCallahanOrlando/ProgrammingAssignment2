@@ -1,3 +1,4 @@
+# DID NOT WORK
 # File: cachemeanV003.R (modified in attempt to fix "$" issue)
 #       This will attempt a more drastic solution -- embedding functions in list
 #       cachemean.R (example from class assignment: "Programming Assignment 2")
@@ -6,6 +7,7 @@
 makeVector <- function()  {
     
     xLib <-- list(
+        
         set <- function(y) {
             x <<- y
             m <<- NULL
